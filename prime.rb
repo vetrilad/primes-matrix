@@ -1,12 +1,6 @@
-require_relative "./lib/prime_number"
+#!/usr/bin/ruby
+# frozen_string_literal: true
 
-n = 3
-primes = PrimeNumber.find_primes(n).freeze
+require_relative './lib/program'
 
-square = []
-n.times do |i|
-    row = []
-    n.times { |j| row << primes[i] + primes[j] }
-    square << row
-    puts row.join(" ")
-end
+PrimeSquareProgram.new.run

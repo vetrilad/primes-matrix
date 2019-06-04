@@ -1,24 +1,23 @@
-module PrimeNumber
-	def self.prime? number
-		return true if [1,2].include? number
-		return nil if number == 0
-		(2...number).each do |factor|
-			if(number % factor) == 0
-				return false
-			end
-		end
-		return true
-	end
+# frozen_string_literal: true
 
-	def self.find_primes n
-		primes = []
-		i = 1
-		while primes.length < n
-			if self.prime? i
-				primes << i
-			end
-			i = i + 1
-		end
-		return primes
-	end
+module PrimeNumber
+  def self.prime?(number)
+    return true if [1, 2].include? number
+    return nil if number.zero?
+
+    (2...number).each do |factor|
+      return false if (number % factor).zero?
+    end
+    true
+  end
+
+  def self.find_primes(size, offset = 1)
+    primes = []
+    i = offset
+    while primes.length < size
+      primes << i if prime?(i)
+      i += 1
+    end
+    primes
+  end
 end
