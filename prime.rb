@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 # frozen_string_literal: true
 
-require_relative './lib/program'
+require_relative './lib/prime_sum_program'
 
-PrimeSquareProgram.new.run
+Exercise::PrimeSumProgram.new.run
