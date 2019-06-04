@@ -7,6 +7,6 @@ RSpec.describe Exercise::PrimeSumProgram do
   end
 
   it 'raises an error when input is invalid' do
-    expect {described_class.new.send(:generate_prime_sum_table, 1)}.to raise_error(ArgumentError)
+    expect { described_class.new.send(:generate_prime_sum_table, 1) }.to raise_error(ArgumentError)
   end
 end
