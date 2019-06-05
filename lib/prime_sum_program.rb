@@ -37,13 +37,14 @@ module Exercise
     def generate_prime_sum_table(input)
       size = validate(input.to_i)
 
-      primes = PrimeNumber.find_primes(size, 2).freeze
+      primes = PrimeNumber.find_primes(size).freeze
 
       PrimeTableBuilder.new.build(size) { |i, j| primes[i] + primes[j] }
     end
 
     def validate(args)
       raise ArgumentError, ERROR_MESSAGE if args < 2
+
       args
     end
   end

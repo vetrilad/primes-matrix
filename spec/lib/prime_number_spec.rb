@@ -2,7 +2,7 @@
 
 RSpec.describe Exercise::PrimeNumber do
   PRIMES = [
-    1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
+    2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
     41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83,
     89, 97, 101, 103, 107, 109, 113, 127, 131,
     137, 139, 149, 151, 157, 163, 167, 173, 179,
@@ -16,7 +16,7 @@ RSpec.describe Exercise::PrimeNumber do
   ].freeze
 
   it 'gets the first number n of primes' do
-    expect(described_class.find_primes(101)).to eq(PRIMES)
+    expect(described_class.find_primes(100)).to eq(PRIMES)
   end
 
   it 'confirms the number is prime' do
@@ -25,5 +25,9 @@ RSpec.describe Exercise::PrimeNumber do
 
   it 'negates the non prime number' do
     expect(described_class.prime?(9)).to eq(false)
+  end
+
+  it '1 is not prime' do
+    expect(described_class.prime?(1)).to eq(false)
   end
 end

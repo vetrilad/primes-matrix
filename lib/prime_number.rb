@@ -3,8 +3,7 @@
 module Exercise
   module PrimeNumber
     def self.prime?(number)
-      return true if [1, 2].include? number
-      return nil if number.zero?
+      return false if number.zero? || number == 1
 
       (2...number).each do |factor|
         return false if (number % factor).zero?
@@ -12,9 +11,9 @@ module Exercise
       true
     end
 
-    def self.find_primes(size, offset = 1)
+    def self.find_primes(size)
       primes = []
-      i = offset
+      i = 1
       while primes.length < size
         primes << i if prime?(i)
         i += 1
